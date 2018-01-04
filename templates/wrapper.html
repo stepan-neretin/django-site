@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+  <link href="{% static "style.css" %}" rel="stylesheet" type="text/css" />
+	<title>Test</title>
+</head>
+<body>
+<header>
+<h2>Блог все просто о мире IT</h2>
+<ul>
+	<li><a href="">PHP7</a></li>
+	<li><a href="">Django</a></li>
+	<li><a href="">C++</a></li>
+</ul>
+</header>
+<div class="content"> 
+{% for post in object_list %}
+<div class="news">
+<p>{{post.title}}</p><br>
+<h5>{{post.date|date:"D-m-Y"}}</h5>
+</div>
+{% endfor %}
+</div>
+</body>
+</html>
